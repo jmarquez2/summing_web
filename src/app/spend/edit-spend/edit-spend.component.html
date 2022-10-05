@@ -1,0 +1,31 @@
+<div class="center" style="width: 100%;">
+    <mat-card style="width: 60%;">
+        <mat-card-title>{{title}}</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="formSpend">
+                <mat-form-field style="width: 100%; align-items: center;" appearance="fill">
+                    <mat-label>Cost</mat-label>
+                    <input matInput [formControl]="formSpend.controls.cost" type="number" step="0.01" />
+                </mat-form-field>
+                <p>
+                    <mat-form-field style="width: 100%;" appearance="fill">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput [formControl]="formSpend.controls.description"></textarea>
+                    </mat-form-field>
+                </p>
+    
+               
+    
+            </form>
+    
+    
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions>
+            <button mat-raised-button color="accent" style="width: 100%" [disabled]="formSpend.invalid" (click)="save()">Save</button>
+        </mat-card-actions>
+        <mat-card-footer>
+    
+        </mat-card-footer>
+    </mat-card>
+</div>
